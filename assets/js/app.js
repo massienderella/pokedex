@@ -7,34 +7,41 @@ form.addEventListener('submit', function(event) {
   event.preventDefault();
   responseContainer.innerHTML = '';
   searchedForText = searchField.value;
-  getNews();
+  getPoke();
+
 });
-function getNews() {
-  const articleRequest = new XMLHttpRequest(); // se crea el objeto
-  articleRequest.open('GET', `https://pokeapi.co/api/v2/pokemon/${searchedForText}`);
-  articleRequest.onload = addNews;
-  articleRequest.onerror = handleError;
-  articleRequest.send();
+function getPoke() {
+  const pokeRequest = new XMLHttpRequest(); // se crea el objeto
+  pokeRequest.open('GET', `https://pokeapi.co/api/v2/pokemon/${searchedForText}`);
+  pokeRequest.onload = addPoke;
+  pokeRequest.onerror = handleError;
+  pokeRequest.send();
 }
 function handleError() {
   console.log('Se ha presentado un error');
 }
-function addNews() {
+
+function addPoke() {
   const data = JSON.parse(this.responseText);
   // console.log(data);
   const name = data.name;
-  console.log(name);
+  // console.log(name);
   const height = data.height;
-  console.log(height);
-
-  // const article = data.response.docs[0];
-  // const title = article.headline.main;
-  // const snippet = article.snippet;
+  // console.log(height);
+  const id = data.id;
+  // console.log(id);
+  const imgUrl = 'https://pokeapi.co/media/sprites/pokemon/' + id + '.png' ;
+  // console.log(imgUrl);
+  const type = data.types[0].type.name;
+  // console.log(type);
+  const weight = data.weight;
+  // console.log(weight);
 
   let li = document.createElement('li');
-  li.className = 'articleClass';
-  li.innerText = `${name} mide ${height}0 cm. ` ;
+  let img = document.createElement('img');
+  img.setAttribute('src', imgUrl);
+  li.className = 'info';
+  li.innerText = `${name} es de tipo ${type}, mide ${height}0 cm. y pesa ${weight}pokeKg.  ` ;
   responseContainer.appendChild(li);
-
-
+  responseContainer.appendChild(img);
 }
