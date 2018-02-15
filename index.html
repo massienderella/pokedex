@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pokedex</title>
+</head>
+<body>
+  <header class="masthead">
+    <h1>Que pokemon quieres buscar?</h1>
+    <div class="site-container">
+      <form id="search-form"  action="index.html" method="post">
+        <label for="search-keyword" class="visuallyhidden">Tira esa pokebola?</label>
+        <input id="search-keyword" type="text" name="search-keyword" value="" required>
+        <input id="submit-btn" type="submit" name="" value="Submit">
+      </form>
+    </div>
+  </header>
+  <div class="site-container">
+    <ul id="response-container">
+
+    </ul>
+  </div>
+  <script type="text/javascript" src="./assets/js/app.js"></script>
+</body>
+</html>
