@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pokedex</title>
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href=".\assets\css\style.css">
+</head>
+<body>
+  <section class="fill ">
+    <header class="masthead start ">
+      <div class="row">
+        <div class="info col-xs-7 col-sm-7 col-md-7 col-lg-7">
+          <h1>Qué pokemon quieres buscar?</h1>
+          <div class="site-container">
+            <form id="search-form"  action="index.html" method="post">
+              <label for="search-keyword" class="visuallyhidden">Tira esa pokebola!</label>
+              <br>
+              <input id="search-keyword" type="text" name="search-keyword" value="" required>
+              <br>
+              <input id="submit-btn" type="submit" name="" value="Lanza!">
+            </form>
+          </div>
+          <div class="site-container">
+            <ul id="response-container">
+            </ul>
+          </div>
+
+        </div>
+        <div class="other-side col-xs-5	col-sm-5 col-md-5 col-lg-5">
+
+
+        </div>
+      </div>
+
+
+
+    </header>
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./assets/js/app.js"></script>
+</body>
+</html>
